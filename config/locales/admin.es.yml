@@ -1,9 +1,32 @@
 es:
   admin:
+    properties: Properties
+    cards: 
+      website: Website
+      websitePrompt: Website actions
+      websiteLink: Go to web control panel
+      properties: Properties
+      propertiesPrompt: Property actions
+      propertiesLink: Go to properties
+    tasks: 
+      addProperty: Add a property
+      addPropertyPrompt: properties / Add property
+      manageProperties: Manage properties
+      managePropertiesPrompt: Properties / Edit property
+      changeLogo: Manage logo, languages and appearance
+      changeLogoPrompt: Web Configuration
+      changeLang: Change web language
+      changeLangPrompt: Web Configuration
+      changeLegalText: Change 'Legal' texts
+      manageLandingCarousel: Manage landing page carousel
+      changeAboutUsText: Change 'About Us' text
+      managePropertyTypes: Manage property types
+      managePropertyExtras: Manage property features
+
     "true": "true"
     "false": "false"
     "yes": "si"
-    "no": "no" 
+    "no": "no"
     es-ES: Spain
     es-CL: Chile
     es-MX: Mexico
@@ -21,29 +44,89 @@ es:
     no-NO: Norway
     ca-CA: Catalunia
     hi-IN: India
+    vi-VI: Vietnam
+    tr-TR: Turkey
+    ar: Arabic
+    en: English
+    es: Spanish
+    ca: Catalan
+    fr: French
+    ru: Russian
+    nl: Dutch
+    it: Italian
+    de: German
+    pt: Portuguese
+    vi: Vietnamese
+    tr: Turko
     hi: Hindi
     sqmt: Square Meters
     sqft: Square Feet
+    cad: Canadian Dollar
+    ars: Argentinan Peso
+    aud: Australian Dollar
+    mxn: Mexican Peso
     gbp: UK Pounds
     usd: US Dollars
     eur: Euros
     inr: Indian Rupee
     chf: Swiss Franc
-    cny: China Yuan Renminbi
-    clp: Chile Peso
-    rub: Russia Ruble
-    brl: Brazil Real
-    zar: South Africa Rand
+    cny: Chinese Yuan Renminbi
+    clp: Chilean Peso
+    rub: Russian Ruble
+    brl: Brazilian Real
+    zar: South African Rand
     hkd: Hong Kong Dollar
+    vnd: Vietnamese Dong
+    try: Turkish Lira
+    pages:
+      aboutUs: Sobre nosotros
+      sell: Vender
+      landing: Inicio
+      legal: Legal
+    pageSections:
+      pageTitle: Page title
+      services: 
+        title: Vuestro servicios
+        info: Detalles de vuestro servicios
+      people: 
+        title: Vuestro equipo
+        info: Detalles de vuestro equipo
+      # landingCarousel: 
+      #   title: Home page carousel
+      #   info: Main section displaying images and text
+      rawHtml: 
+        title: HTML Content
+        info: You can add extra HTML here
+      topRentals: 
+        title: Top Rentals
+        info: Summary list of properties to rent
+      topSales: 
+        title: Top Sales
+        info: Summary list of properties for sale
+      contactUsForm: 
+        title: Contact us form
+        info: Form to allow visitors to send you a message
+      # aboutUs:
+      #   title: Text and photo
+      #   info: A little bit about your business
+      ourAgency:
+        title: About our agency
+        info: A little bit about your business
+      landingHero:
+        title: Main header
+        info: Large image and text highlighting your busi
+    editor:
+      pickPhoto: Selecciona foto
+      uploadPhoto: Subir foto
     inTabLabels:
-      topNav: Top Navigacion
+      topNav: Navigacion
       footer: Footer
-      currency: Currency
+      currency: Moneda
       colors: Colores
       socialLinks: Redes sociales
       siteLayout: Modo de visualización
       colorFooterBg: Color de fondo del footer
-      colorFooterMainText: Color principal del texto del footer 
+      colorFooterMainText: Color principal del texto del footer
       colorFooterSecText: Color secundario del texto del footer
       colorPrimary: Color principal
       colorSecondary: Color secundario
@@ -56,11 +139,12 @@ es:
       buy: Comprar
       contactUs: Contactar
       home: Inicio
-      rent: Alquilar
+      rent: Arrendar
       sell: Vender
       legalAdvice: Aviso Legal
       privacyPolicy: Politica de Privacidad
     adminSections:
+      pages: Paginas
       import: Importar Datos
       start: Inicio
       agencyDetails: Agencia
@@ -78,7 +162,7 @@ es:
 
     btnLabels:
       importTranslations: Importar traduciones
-      importSiteContent: Importar contenido del web 
+      importSiteContent: Importar contenido del web
       setThemePrompt: Set as website theme
       activatedThemeInfo: Currently active website theme
 
@@ -90,7 +174,7 @@ es:
       recLogoPhotoSize: Recommended size for logo is 120px X 80px,
       orderByDragging: Pinche y arrastre sobre la fila para ordenar - la primera foto es la foto principal
 
-    webContentLabels: 
+    webContentLabels:
       suffixAr: en Arabe
       suffixFr: en Francés
       suffixIt: en Italiano
@@ -101,22 +185,24 @@ es:
       suffixRu: en Ruso
       suffixCa: en Catalan
       suffixNl: en Hollandés
+      suffixVi: en Vietnamese
+      suffixTr: en Turko
       privacyPolicy: Texto de la política de privacidad
       legalAdvice: Texto del aviso legal
-      landingcarousel: Texto del slider
-      cac1: Columna 1
-      cac2: Columna 2
-      cac3: Columna 3
-      landingPageHero: Contenido para la página principal
-      tagLine: Tag Line
+      # landingcarousel: Texto del slider
+      # cac1: Columna 1
+      # cac2: Columna 2
+      # cac3: Columna 3
+      # landingPageHero: Contenido para la página principal
+      # tagLine: Tag Line
       aboutUs: Sobre nosotros
       footerInfo: Contenido para el pie de página
 
-    siteSections: 
+    siteSections:
       aboutUs: Sobre nosotros
       contactUs: Contacto
       buy: Comprar
-      rent: Alquiler
+      rent: Arrendar
       sell: Vender
 
     ioSections:
@@ -129,7 +215,7 @@ es:
       appearance: Aparancia
       footer: Footer
       aboutUs: Sobre nosotros
-      contactInformation: Contact information 
+      contactInformation: Contact information
       sell: Vender
       tagLine: Tag Line
       legal: Aviso Legal
@@ -142,7 +228,7 @@ es:
         contentAreaCols: Columnas del página principal
 
 
-    fieldLabels: 
+    fieldLabels:
     #   yaencontre: Yaencontre
     #   pisoscom: Pisoscom
     #   idealista: Idealista
@@ -171,7 +257,7 @@ es:
       tituloIngles: Titulo Inglés
       precioVenta: Precio Venta
       precioAntiguo: Original Price
-      precioAlquiler: Precio Alquiler
+      precioAlquiler: Precio Arriendo
       origen: Origen
       temporadas: Temporadas
       precioTa: Precio Temp. Alta
@@ -192,14 +278,14 @@ es:
       priceSaleCurrent: Precio
       saleDiscount: Descuento
       priceSaleOriginal: Precio original
-      longTermRental: Disponible para alquiler a largo plazo?
-      seasonalRental: Disponible para alquiler vacacional?
+      longTermRental: Disponible para arriendo a largo plazo?
+      seasonalRental: Disponible para arriendo vacacional?
       priceRentalMonthlyHighSeason: Precio de temporada alta
       priceRentalMonthlyLowSeason: Precio de temporada baja
       priceRentalMonthlyStandardSeason: Precio de temporada media
-      priceRentalMonthlyCurrent: Precio de alquiler (mensual)
-      longTermRentalDiscount: Descuento en el alquiler
-      priceRentalMonthlyOriginal: Precio original del alquiler (mensual)
+      priceRentalMonthlyCurrent: Precio de arriendo (mensual)
+      longTermRentalDiscount: Descuento en el arriendo
+      priceRentalMonthlyOriginal: Precio original del arriendo (mensual)
       firstNames: Nombre
       lastNames: Apellidos
       visible: Visible

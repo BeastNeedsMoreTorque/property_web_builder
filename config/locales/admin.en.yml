@@ -21,20 +21,80 @@ en:
     no-NO: Norway
     ca-CA: Catalunia
     hi-IN: India
+    vi-VI: Vietnam
+    tr-TR: Turkey
+    ar: Arabic
+    en: English
+    es: Spanish
+    ca: Catalan
+    fr: French
+    ru: Russian
+    nl: Dutch
+    it: Italian
+    de: German
+    pt: Portuguese
+    vi: Vietnamese
+    tr: Turkish
     hi: Hindi
     sqmt: Square Meters
     sqft: Square Feet
+    cad: Canadian Dollar
+    ars: Argentinan Peso
+    aud: Australian Dollar
+    mxn: Mexican Peso
     gbp: UK Pounds
     usd: US Dollars
     eur: Euros
     inr: Indian Rupee
     chf: Swiss Franc
-    cny: China Yuan Renminbi
-    clp: Chile Peso
-    rub: Russia Ruble
-    brl: Brazil Real
-    zar: South Africa Rand
+    cny: Chinese Yuan Renminbi
+    clp: Chilean Peso
+    rub: Russian Ruble
+    brl: Brazilian Real
+    zar: South African Rand
     hkd: Hong Kong Dollar
+    vnd: Vietnamese Dong
+    try: Turkish Lira
+    pages:
+      aboutUs: About us
+      sell: Sell
+      landing: Landing
+      legal: Legal
+    pageSections:
+      pageTitle: Page title
+      services: 
+        title: Services you offer
+        info: An overview of the services you offer
+      people: 
+        title: Your team
+        info: Summary info about your team
+      # landingCarousel: 
+      #   title: Home page carousel
+      #   info: Main section displaying images and text
+      rawHtml: 
+        title: HTML Content
+        info: You can add extra HTML here
+      topRentals: 
+        title: Top Rentals
+        info: Summary list of properties to rent
+      topSales: 
+        title: Top Sales
+        info: Summary list of properties for sale
+      contactUsForm: 
+        title: Contact us form
+        info: Form to allow visitors to send you a message
+      # aboutUs:
+      #   title: Text and photo
+      #   info: A little bit about your business
+      ourAgency:
+        title: About our agency
+        info: A little bit about your business
+      landingHero:
+        title: Main header
+        info: Large image and text highlighting your busi
+    editor:
+      pickPhoto: Pick photo
+      uploadPhoto: Upload photo
     inTabLabels:
       topNav: Top Navigation
       footer: Footer
@@ -61,6 +121,7 @@ en:
       legalAdvice: "Legal Notice"
       privacyPolicy: "Privacy Policy"
     adminSections:
+      pages: Pages
       import: Import Data
       start: Home
       agencyDetails: Agency
@@ -101,14 +162,16 @@ en:
       suffixRu: in Russian
       suffixCa: in Catalan
       suffixNl: in Dutch
+      suffixVi: in Vietnamese
+      suffixTr: in Turkish
       privacyPolicy: Privacy Policy
       legalAdvice: Legal Notice
-      landingcarousel: Text for carousel image
-      cac1: Column 1
-      cac2: Column 2
-      cac3: Column 3
-      landingPageHero: Content for the main page
-      tagLine: Tag Line
+      # landingcarousel: Text for carousel image
+      # cac1: Column 1
+      # cac2: Column 2
+      # cac3: Column 3
+      # landingPageHero: Content for the main page
+      # tagLine: Tag Line
       aboutUs: About us
       footerInfo: Extra footer content
 
@@ -131,7 +194,7 @@ en:
       aboutUs: About us
       contactInformation: Contact information 
       sell: Sell
-      tagLine: Tag Line
+      # tagLine: Tag Line
       legal: Legal
       general: General
       landingCarousel: Landing Page Carousel
@@ -239,3 +302,192 @@ en:
       visible: Visible
       reference: Ref
       type: Type
+
+    # TODO - move Spanish versions of below to server side
+    save: Save
+    cancel: Cancel
+    edit: Edit
+    preview: Preview
+    close: Close
+    addLogo: Add Logo
+    addPhotos: Add Photos
+    create: Create
+    delete: Delete
+    show: Show
+    hide: Hide
+    logo: Logo
+    aboutUsPhoto: About Us photo
+    addAboutUsPhoto: Add About Us photo
+
+    visible: Visible
+    hidden: Hidden
+
+    editWebsite: Edit Website
+    settingsForWebsite: Settings for Website
+    contentForWebsite: Content for Website 
+    sectionsForWebsite: Website Sections
+    themesForWebsite: Website Themes
+    importExport: Import and export data
+    returnToWebsite: Return to web
+    settingsForProperties: Settings for properties
+    returnToProperties: Return to properties
+    addProperty: Add property
+    addClient: Add client
+    newProperty: New Property
+    newClient: New Client
+    propertiesList: Properties list
+    clientsList: Clients list
+
+    prompts: 
+      fixErrors: Please correct the errors below
+
+    todos: 
+      createContent: Create some content
+      companyDetails: Set up your company details
+
+    locationTab: 
+      confirmAddress: Confirm new location
+
+    agencySections: 
+      general: Agency Details
+      location: Location
+      user: User Details
+
+    siteLayout: 
+      wide: Wide
+      boxed: Boxed
+
+    propertySections: 
+      general: General
+      location: Location
+      text: Text
+      extras: Features
+      photos: Photos
+      sale: Sale / Rental
+      owner: Owner
+
+    propertyGeneralSections: 
+      sale: Sale
+      longtermRental: Long term rental
+      seasonalRental: Seasonal rental
+      visibility: Visibility
+      generalData: General Data
+      characteristics: Characteristics
+      portals: Web Portals
+      extras: Features
+
+    translationsSections: 
+      extras: Features
+      propertyTypes: Property Types
+      propertyOrigins: Property Origins
+      propertyStates: Property States
+      propertyLabels: Property Labels
+      provinces: Provinces
+
+    toolTips: 
+      forSale: Select if property is available for sale
+      priceSaleCurrent: Current selling price
+      saleDiscount: saleDiscount
+      priceSaleOriginal: Original selling price
+      longTermRental: Select 'Yes' if property is available for long term rental
+      priceRentalMonthlyCurrent: Current rental price
+      priceRentalMonthlyOriginal: Original rental price
+
+      addNewEntry: Add New Entry
+      visible: Select 'Yes' to publish property on the website
+      highlighted: Select 'Yes' to highlight property on the website
+      seasonalRental: Select 'Yes' if property is rentened seasonaly
+      ref: Reference number for property
+
+    alerts: 
+      changesDetected: You have unsaved changes.
+      deletingProperty: Are you sure you want to delete this property.  This action cannot be undone.
+      navigatingFromChanges: You have unsaved changes. Please save or cancel your changes.
+      visibleProperties: These properties are visible on your website
+      hiddenProperties: These properties will not be shown on your website
+      clickMapToUpdate: Click on map to select address or type directly below.
+
+    datatables: 
+      sInfo: Showing items from _START_ al _END_ from a total of _TOTAL_ properties
+      sInfoEmpty: Showing items from 0 al 0 from a total of 0 properties
+      sInfoPostFix: ""
+      sSearch: Search
+      sUrl: ""
+      sInfoThousands: ","
+      oPaginate: 
+        sFirst: "<<"
+        sLast: ">>"
+        sNext: ">"
+        sPrevious: "<"
+
+    alert: 
+      deleteItem: Are you sure you want to delete this item?
+      deleteButton: Yes, delete it!
+
+    street: Street
+    streetAddress: Street Address
+    streetNumber: Street Number
+    city: City
+    postCode: Post Code
+    region: Region
+    zone: Zone
+    locality: Locality
+    country: Country
+
+    properties: Properties
+
+    cards: 
+      website: Website
+      websitePrompt: Website actions
+      websiteLink: Go to web control panel
+      properties: Properties
+      propertiesPrompt: Property actions
+      propertiesLink: Go to properties
+    tasks: 
+      addProperty: Add a property
+      addPropertyPrompt: properties / Add property
+      manageProperties: Manage properties
+      managePropertiesPrompt: Properties / Edit property
+      changeLogo: Manage logo, languages and appearance
+      changeLogoPrompt: Web Configuration
+      changeLang: Change web language
+      changeLangPrompt: Web Configuration
+      changeLegalText: Change 'Legal' texts
+      manageLandingCarousel: Manage landing page carousel
+      changeAboutUsText: Change 'About Us' text
+      managePropertyTypes: Manage property types
+      managePropertyExtras: Manage property features
+
+    buttonLabels: 
+      configureAvailableExtras: Configure available features
+      selectImagesToAdd: Select images to add
+      selectRemoteImages: Add images from urls
+
+    errors:
+      genericServerError: Sorry, there has been an error
+      languageRequired: You must select at least one language
+      inclusion: is not included in the list
+      exclusion: is reserved
+      invalid: is invalid
+      confirmation: "doesn't match {{attribute}}"
+      accepted: must be accepted
+      empty: "can't be empty"
+      blank: "can't be blank"
+      present: must be blank
+      tooLong: is too long (maximum is {{count}} characters)
+      tooShort: is too short (minimum is {{count}} characters)
+      wrongLength: is the wrong length (should be {{count}} characters)
+      notANumber: is not a number
+      notAnInteger: must be an integer
+      greaterThan: must be greater than {{count}}
+      greaterThanOrEqualTo: must be greater than or equal to {{count}}
+      equalTo: must be equal to {{count}}
+      lessThan: must be less than {{count}}
+      lessThanOrEqualTo: must be less than or equal to {{count}}
+      otherThan: must be other than {{count}}
+      odd: must be odd
+      even: must be even
+      tooShortVjs: is too short
+      notAUrlVjs: is not a valid URL
+
+

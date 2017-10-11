@@ -1,7 +1,12 @@
 module Pwb
   class Prop < ApplicationRecord
     translates :title, :description
-    globalize_accessors locales: [:en, :ca, :es, :fr, :ar, :de, :ru, :pt]
+    globalize_accessors locales: I18n.available_locales
+    # globalize_accessors locales: [:en, :ca, :es, :fr, :ar, :de, :ru, :pt]
+
+    # below needed to avoid "... is not an attribute known to Active Record" warnings
+    attribute :title
+    attribute :description
 
     # Use EUR as model level currency
     # register_currency :eur
@@ -116,13 +121,29 @@ module Pwb
       # return merged_extras.sort
     end
 
-    def ordered_photo_url(number)
+    def ordered_photo(number)
       # allows me to pick an individual image according to an order
-      unless prop_photos.length >= number
-        return "https://placeholdit.imgix.net/~text?txtsize=38&txt=&w=550&h=400&txttrack=0"
+      if prop_photos.length >= number
+        prop_photos[number - 1]
       end
-      prop_photos[number - 1].image.url
     end
+
+
+    def primary_image_url
+      if prop_photos.length > 0
+        ordered_photo(1).image.url
+      else
+        ""
+      end
+    end
+
+    # def ordered_photo_url(number)
+    #   # allows me to pick an individual image according to an order
+    #   unless prop_photos.length >= number
+    #     return "https://placeholdit.imgix.net/~text?txtsize=38&txt=&w=550&h=400&txttrack=0"
+    #   end
+    #   prop_photos[number - 1].image.url
+    # end
 
     def url_friendly_title
       # used in constructing seo friendly url

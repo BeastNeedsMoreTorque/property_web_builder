@@ -1,7 +1,47 @@
 # Change Log for PropertyWebBuilder
 All notable changes to this project will be documented in this file.
 
-## 0.2.0
+## Unreleased
+
+* New CMS functionality
+* Add Portuguese as an admin language
+* Add preset color palettes
+* Require Rails 5.1.0 or above
+
+## 1.2.0 / 2017-08-23
+
+* Add Vue.js
+* Add search results map
+* Display infowindow on maps
+* Add social sharing buttons
+* Add Turkish and Vietnamese translations
+* Fix Rails 5.1.0 issue with seed task (#29)
+* Fix language picker redirecting to root
+* Set open graph meta tags
+* Support Rails 5.1.0
+
+## 1.1.1 / 2017-07-25
+
+* Yanked previous release and re-released due to error in cleaning up tmp files
+
+## 1.1.0 / 2017-07-25
+
+* Fix Rails 5.1.0 issue with paloma gem (#28)
+* Optimise cloudinary images
+* Google PageSpeed improvements
+* Support for adding CSS directly
+* Support for Google Analytics script
+* Increase valid price range in admin UI (#21)
+* Allow setting of search widget price options
+* Add Russian as an admin language
+
+## 1.0.0 / 2017-05-25
+
+* Minor fixes for admin UI (#16 & #17)
+* Russian translation improvements
+* Stable version tried and tested in production
+
+## 0.2.0 / 2017-05-03
 
 * Experimental support for import of properties from web pages
 * Add German, Russian and Portuguese translations

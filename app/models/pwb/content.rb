@@ -1,10 +1,33 @@
 module Pwb
   class Content < ApplicationRecord
     has_many :content_photos, dependent: :destroy
-    belongs_to :section, foreign_key: "section_key", primary_key: "link_path"
+    belongs_to :section, optional: true, foreign_key: "section_key", primary_key: "link_path"
+    has_many :page_contents
+    has_many :pages, :through => :page_contents
+    # , :uniq => true
 
     translates :raw, fallbacks_for_empty_translations: true
-    globalize_accessors locales: [:en, :ca, :es, :fr, :ar, :de, :ru, :pt]
+    globalize_accessors locales: I18n.available_locales
+    # globalize_accessors locales: [:en, :ca, :es, :fr, :ar, :de, :ru, :pt]
+
+    attribute :raw
+
+    def as_json(options = nil)
+      super({only: [
+               "key","fragment_key", "visible_on_page"
+             ],
+             methods: admin_attribute_names
+             }.merge(options || {}))
+    end
+
+    def admin_attribute_names
+      self.globalize_attribute_names.push :content_photos
+    end
+
+
+    def default_photo
+      content_photos.first
+    end
 
     def default_photo_url
       if content_photos.first

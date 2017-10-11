@@ -5,14 +5,14 @@ source 'https://rubygems.org'
 # development dependencies will be added by default to the :development group.
 gemspec
 
+gem 'rails', '~> 5.1.1'
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# below cannot be moved into gemspec as it does not accept the "git:" syntax
 # gem 'globalize', git: 'https://github.com/globalize/globalize'
-gem 'globalize', github: 'globalize/globalize'
+# gem 'globalize', github: 'globalize/globalize'
 # below needed by above - (in gemspec)
 # gem 'activemodel-serializers-xml'
 # gem 'globalize-accessors'
@@ -61,3 +61,6 @@ end
 # /Users/me/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/localeapp-2.1.1/lib/localeapp/default_value_handler.rb
 # below overwrites I18n::Backend::Base above which causes seeder to break in specs
 # gem 'localeapp'
+
+gem 'paloma', github: 'fredngo/paloma'
+gem 'bourbon'

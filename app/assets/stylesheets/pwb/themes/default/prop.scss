@@ -30,7 +30,7 @@
   padding: 0px;
   div.prop-figure {
     display: block;
-    height: 190px;
+    height: 200px;
     width: 100%;
     text-align: center;
     overflow: hidden;
@@ -419,10 +419,6 @@ nav.venta_alquiler a:hover {
 
 nav.venta_alquiler a.selected {
   text-transform: uppercase;
-}
-
-#btn_buscar_inmuebles {
-  width: 100%;
 }
 
 .btn-group.bootstrap-select button {

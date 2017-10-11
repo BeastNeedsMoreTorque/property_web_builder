@@ -1,6 +1,6 @@
 # PropertyWebBuilder
 
-[![Build Status](https://api.travis-ci.org/etewiah/property_web_builder.svg?branch=master)](https://api.travis-ci.org/etewiah/property_web_builder)
+[![Backers on Open Collective](https://opencollective.com/property_web_builder/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/property_web_builder/sponsors/badge.svg)](#sponsors)[![Build Status](https://api.travis-ci.org/etewiah/property_web_builder.svg?branch=master)](https://api.travis-ci.org/etewiah/property_web_builder)
 
 This project has been created to address a glaring gap in the rails ecosystem: the lack of an open source project for real estate websites.  
 
@@ -18,7 +18,7 @@ To see the admin panel, login as user admin@example.com with a password of "pwb1
 
 ## Rails Version
 
-PropertyWebBuilder runs with Rails >= 5.0
+PropertyWebBuilder runs with Rails '>= 5.1.0'
 
 ## Ruby Version
 
@@ -32,7 +32,7 @@ Install into an existing Rails project by adding these lines in your application
 ```ruby
 gem 'pwb', git: 'https://github.com/etewiah/property_web_builder', branch: 'master'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
-
+gem 'paloma', github: 'fredngo/paloma'
 ```
 
 Also, be sure to use Postgres as your database (by having the "pg" gem and Postgres installed locally 
@@ -52,6 +52,7 @@ rails pwb:install:migrations
 rails db:create
 rails db:migrate
 rails pwb:db:seed
+rails pwb:db:seed_pages
 ```
 
 ## Deploying to Heroku
@@ -122,6 +123,19 @@ Thanks to the awesome [Locale](http://www.localeapp.com/) contributing to the tr
 - The maintainer will then pull translations from the Locale project and push to Github.
 
 
+## Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute]](CONTRIBUTING.md).
+<a href="graphs/contributors"><img src="https://opencollective.com/property_web_builder/contributors.svg?width=890" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/property_web_builder#backer)]
+
+<a href="https://opencollective.com/property_web_builder#backers" target="_blank"><img src="https://opencollective.com/property_web_builder/backers.svg?width=890"></a>
+
+
 ## Sponsors
 
 PropertyWebBuilder is currently sponsored by Coddde, Ruby On Rails consultants based in Spain and Chile:
@@ -129,7 +143,20 @@ PropertyWebBuilder is currently sponsored by Coddde, Ruby On Rails consultants b
 ![Coddde](http://coddde.com/wp-content/uploads/2017/01/coddde_logo.png)
 </a>
 
-If you wish to sponsor this project please email me directly (opensource at propertywebbuilder.com).
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/property_web_builder#sponsor)]
+
+<a href="https://opencollective.com/property_web_builder/sponsor/0/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/property_web_builder/sponsor/1/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/property_web_builder/sponsor/2/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/property_web_builder/sponsor/3/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/property_web_builder/sponsor/4/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/property_web_builder/sponsor/5/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/property_web_builder/sponsor/6/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/property_web_builder/sponsor/7/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/property_web_builder/sponsor/8/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/property_web_builder/sponsor/9/website" target="_blank"><img src="https://opencollective.com/property_web_builder/sponsor/9/avatar.svg"></a>
+
 
 
 ## License

@@ -1,3 +1,5 @@
+# To reload from console:
+# load "#{Pwb::Engine.root}/lib/pwb/seeder.rb"
 module Pwb
   class Seeder
     class << self
@@ -6,7 +8,6 @@ module Pwb
 
       def seed!
         I18n.locale = :en
-
         # unless ENV["RAILS_ENV"] == "test"
         #   load File.join(Pwb::Engine.root, 'db', 'seeds', 'translations.rb')
         # end
@@ -16,28 +17,65 @@ module Pwb
           load File.join(Pwb::Engine.root, 'db', 'seeds', 'translations_de.rb')
           load File.join(Pwb::Engine.root, 'db', 'seeds', 'translations_fr.rb')
           load File.join(Pwb::Engine.root, 'db', 'seeds', 'translations_pt.rb')
-          load File.join(Pwb::Engine.root, 'db', 'seeds', 'translations_others.rb')
+          load File.join(Pwb::Engine.root, 'db', 'seeds', 'translations_ru.rb')
+          load File.join(Pwb::Engine.root, 'db', 'seeds', 'translations_ca.rb')
         end
 
-        seed_content 'content_columns.yml'
-        seed_content 'carousel.yml'
-        seed_content 'about_us.yml'
-        seed_content 'static.yml'
+        # seed_sections 'sections.yml'
+        # seed_content 'content_columns.yml'
+        # seed_content 'carousel.yml'
+        # seed_content 'about_us.yml'
+        # seed_content 'static.yml'
         seed_content 'footer.yml'
-        seed_content 'sell.yml'
+        # seed_content 'sell.yml'
         seed_agency 'agency.yml'
         seed_website 'website.yml'
         # need to seed website first so correct currency is used
-        seed_prop 'villa_for_sale.yml'
-        seed_prop 'villa_for_rent.yml'
-        seed_prop 'flat_for_sale.yml'
-        seed_prop 'flat_for_rent.yml'
-        seed_sections 'sections.yml'
+        unless Pwb::Prop.count > 3
+          seed_prop 'villa_for_sale.yml'
+          seed_prop 'villa_for_rent.yml'
+          seed_prop 'flat_for_sale.yml'
+          seed_prop 'flat_for_rent.yml'
+        end
         seed_field_keys 'field_keys.yml'
         seed_users 'users.yml'
+        seed_contacts 'contacts.yml'
+        seed_pages
+        seed_links 'links.yml'
+
+      end
+
+      def seed_pages
+        page_yml_filenames = [
+          "sell.yml", "about.yml", "buy.yml",
+          "rent.yml", "home.yml", "legal_notice.yml",
+          "contact.yml", "privacy_policy.yml"
+        ]
+
+        page_yml_filenames.each do |page_yml_filename|
+          seed_page page_yml_filename
+        end
       end
 
       protected
+
+
+      def seed_page yml_file
+        page_seed_file = Pwb::Engine.root.join('db', 'yml_seeds', 'pages', yml_file)
+        page_yml = YAML.load_file(page_seed_file)
+        unless Pwb::Page.where(slug: page_yml[0]['slug']).count > 0
+          Pwb::Page.create!(page_yml)
+        end
+      end
+
+      def seed_contacts yml_file
+        contacts_yml = load_seed_yml yml_file
+        contacts_yml.each do |contact_yml|
+          unless Pwb::Contact.where(primary_email: contact_yml['email']).count > 0
+            Pwb::Contact.create!(contact_yml)
+          end
+        end
+      end
 
       def seed_users yml_file
         users_yml = load_seed_yml yml_file
@@ -57,14 +95,24 @@ module Pwb
         end
       end
 
-      def seed_sections yml_file
-        sections_yml = load_seed_yml yml_file
-        sections_yml.each do |single_section_yml|
-          unless Pwb::Section.where(link_key: single_section_yml['link_key']).count > 0
-            Pwb::Section.create!(single_section_yml)
+      def seed_links yml_file
+        links_yml = load_seed_yml yml_file
+        links_yml.each do |single_link_yml|
+          unless Pwb::Link.where(slug: single_link_yml['slug']).count > 0
+            Pwb::Link.create!(single_link_yml)
           end
         end
       end
+
+
+      # def seed_sections yml_file
+      #   sections_yml = load_seed_yml yml_file
+      #   sections_yml.each do |single_section_yml|
+      #     unless Pwb::Section.where(link_key: single_section_yml['link_key']).count > 0
+      #       Pwb::Section.create!(single_section_yml)
+      #     end
+      #   end
+      # end
 
       def seed_website yml_file
         website_yml = load_seed_yml yml_file
@@ -111,7 +159,7 @@ module Pwb
       end
 
       def seed_content yml_file
-        content_seed_file = Pwb::Engine.root.join('db', 'yml_seeds', 'content', yml_file)
+        content_seed_file = Pwb::Engine.root.join('db', 'yml_seeds', yml_file)
         content_yml = YAML.load_file(content_seed_file)
         # tag is used to group content for an admin page
         # key is camelcase (js style) - used client side to identify each item in a group of content
