@@ -18,7 +18,7 @@ es:
       changeLang: Change web language
       changeLangPrompt: Web Configuration
       changeLegalText: Change 'Legal' texts
-      manageLandingCarousel: Manage landing page carousel
+      manageLandingCarousel: Edit landing page
       changeAboutUsText: Change 'About Us' text
       managePropertyTypes: Manage property types
       managePropertyExtras: Manage property features
@@ -38,14 +38,18 @@ es:
     it-IT: Italy
     de-DE: Germany
     ru-RU: Russia
-    ne-NE: Netherlands
-    po-PO: Poland
+    ko-KR: Korea
+    nl-Nl: Netherlands
+    nl-NL: Netherlands
+    pl-PL: Poland
+    ro-RO: Romania
     fi-FI: Finland
     no-NO: Norway
     ca-CA: Catalunia
     hi-IN: India
     vi-VI: Vietnam
     tr-TR: Turkey
+    bg-BG: Bulgaria
     ar: Arabic
     en: English
     es: Spanish
@@ -59,6 +63,10 @@ es:
     vi: Vietnamese
     tr: Turko
     hi: Hindi
+    pl: Polish
+    ro: Romanian
+    ko: Korean
+    bg: Bulgarian
     sqmt: Square Meters
     sqft: Square Feet
     cad: Canadian Dollar
@@ -78,12 +86,30 @@ es:
     hkd: Hong Kong Dollar
     vnd: Vietnamese Dong
     try: Turkish Lira
+    pln: Polish Zloty
+    ron: Romanian Leu
+    ngn: Nigerian Naira
+    ghs: Ghanaian Cedi
+    dkk: Danish Krone
+    czk: Czech Koruna
+    sek: Swedish Krona
+    thb: Thai Baht
+    mad: Moroccan Dirham
+    egp: Egyptian Pound
     pages:
       aboutUs: Sobre nosotros
       sell: Vender
       landing: Inicio
       legal: Legal
     pageSections:
+      notEditable:
+        This section cannot be edited
+      homeSearchComponent: 
+        title: Search bar
+        info: Enable property search on the home page
+      contactUsFormAndMap: 
+        title: Form and Map
+        info: Contact us form and map
       pageTitle: Page title
       services: 
         title: Vuestro servicios
@@ -187,6 +213,10 @@ es:
       suffixNl: en Hollandés
       suffixVi: en Vietnamese
       suffixTr: en Turko
+      suffixPl: en Polaco
+      suffixRo: en Rumano
+      suffixKo: in Korean
+      suffixBg: in Bulgarian
       privacyPolicy: Texto de la política de privacidad
       legalAdvice: Texto del aviso legal
       # landingcarousel: Texto del slider

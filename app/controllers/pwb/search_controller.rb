@@ -2,7 +2,7 @@ require_dependency 'pwb/application_controller'
 
 module Pwb
   class SearchController < ApplicationController
-    before_action :header_image
+    before_action :header_image_url
 
     def search_ajax_for_sale
       @operation_type = "for_sale"
@@ -31,7 +31,18 @@ module Pwb
 
     # ordering of results happens client-side with paloma search.js
     def buy
-      @page_title = I18n.t("searchForProperties")
+      @page = Pwb::Page.find_by_slug "buy"
+      @page_title = @current_agency.company_name
+      # @content_to_show = []
+      if @page.present?
+        @page_title = @page.page_title + ' - ' + @current_agency.company_name
+        # TODO: - allow addition of custom content
+        # @page.ordered_visible_page_contents.each do |page_content|
+        #   @content_to_show.push page_content.content.raw
+        # end
+      end
+
+      # @page_title = I18n.t("searchForProperties")
       # in erb template for this action, I have js that will render search_results template
       # for properties - like search_ajax action does
       @operation_type = "for_sale"
@@ -65,7 +76,17 @@ module Pwb
 
     # TODO: - avoid duplication b/n rent and buy
     def rent
-      @page_title = I18n.t("searchForProperties")
+      @page = Pwb::Page.find_by_slug "rent"
+      @page_title = @current_agency.company_name
+      # @content_to_show = []
+      if @page.present?
+        @page_title = @page.page_title + ' - ' + @current_agency.company_name
+        # TODO: - allow addition of custom content
+        # @page.ordered_visible_page_contents.each do |page_content|
+        #   @content_to_show.push page_content.content.raw
+        # end
+      end
+      # @page_title = I18n.t("searchForProperties")
       # in erb template for this action, I have js that will render search_results template
       # for properties - like search_ajax action does
       @operation_type = "for_rent"
@@ -94,21 +115,20 @@ module Pwb
     def set_map_markers
       @map_markers = []
       @properties.each do |property|
-        if property.show_map
-          @map_markers.push(
-            {
-              id: property.id,
-              title: property.title,
-              show_url: property.contextual_show_path(@operation_type),
-              image_url: property.primary_image_url,
-              display_price: property.contextual_price_with_currency(@operation_type),
-              position: {
-                lat: property.latitude,
-                lng: property.longitude
-              }
+        next unless property.show_map
+        @map_markers.push(
+          {
+            id: property.id,
+            title: property.title,
+            show_url: property.contextual_show_path(@operation_type),
+            image_url: property.primary_image_url,
+            display_price: property.contextual_price_with_currency(@operation_type),
+            position: {
+              lat: property.latitude,
+              lng: property.longitude
             }
-          )
-        end
+          }
+        )
       end
     end
 
@@ -212,16 +232,18 @@ module Pwb
     # end
 
     private
-    # def header_image_url
+
+    def header_image_url
+      # lc_content = Content.where(tag: 'landing-carousel')[0]
+      lc_photo = ContentPhoto.find_by_block_key "landing_img"
+      # used by berlin theme
+      @header_image_url = lc_photo.present? ? lc_photo.optimized_image_url : nil
+    end
+
+    # def header_image
     #   # used by berlin theme
     #   hi_content = Content.where(tag: 'landing-carousel')[0]
-    #   @header_image_url = hi_content.present? ? hi_content.default_photo_url : ""
+    #   @header_image = hi_content.present? ? hi_content.default_photo : nil
     # end
-
-    def header_image
-      # used by berlin theme
-      hi_content = Content.where(tag: 'landing-carousel')[0]
-      @header_image = hi_content.present? ? hi_content.default_photo : nil
-    end
   end
 end

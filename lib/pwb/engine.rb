@@ -13,7 +13,10 @@ require 'devise'
 require 'cloudinary'
 require 'active_hash'
 require 'firebase'
-# require 'comfortable_mexican_sofa'
+require "liquid"
+require "flag_shih_tzu"
+require "omniauth-facebook"
+require 'geocoder'
 
 # require 'redis'
 # # logster gem has to be after redis..
@@ -35,12 +38,22 @@ module Pwb
     config.action_dispatch.default_headers = {
       'X-Frame-Options' => 'ALLOWALL'
     }
+
+
+    # PWB precompile assets defined here had been working fine
+    # till I added "gem 'property_web_scraper', github: 'RealEstateWebTools/property_web_scraper' "
+    # to gemfile.
+    # Now get "Asset was not declared to be precompiled in production" error
+    # and need to add below to /pwb/spec/dummy/config/initializers/assets.rb fix that:
+    # Rails.application.config.assets.precompile += %w( pwb/themes/default.css )
+
+
     # config.assets.paths << File.expand_path("../../assets/stylesheets", __FILE__)
     # config.assets.paths << File.expand_path("../../assets/javascripts", __FILE__)
     config.assets.paths << root.join("app", "assets", "stylesheets", "pwb", "themes")
     config.assets.paths << root.join("app", "assets", "javascripts", "pwb", "themes")
-    config.assets.precompile += %w( pwb_admin_panel/application_legacy_1.css default.css chic.css berlin.css 
-    squares.css matt.css vic.css airbnb.css airbnb.js vic.js matt.js squares.js default.js chic.js berlin.js pwb_admin_panel/application_legacy_1.js )
+    config.assets.precompile += %w( pwb_admin_panel/application_legacy_1.css default.css chic.css berlin.css
+                                    squares.css matt.css vic.css vic.js matt.js squares.js default.js chic.js berlin.js pwb_admin_panel/application_legacy_1.js pwb/config.js )
 
     config.to_prepare do
       # https://github.com/plataformatec/devise/wiki/How-To:-Use-devise-inside-a-mountable-engine
